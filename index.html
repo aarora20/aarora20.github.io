@@ -2,14 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/aa.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aryaman Arora </title>
-    <script type="module" crossorigin src="/assets/index-60b4ba9d.js"></script>
-    <link rel="stylesheet" href="/assets/index-aacca2d8.css">
+    <meta
+      name="description"
+      content="Aryaman Arora — software engineer. Projects, experience, and a terminal you can actually type into."
+    />
+    <meta name="theme-color" content="#0b0d0e" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Aryaman Arora" />
+    <meta
+      property="og:description"
+      content="Software engineer. Projects, experience, and a terminal you can actually type into."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aryamanarora.com" />
+
+    <title>Aryaman Arora</title>
+
+    <!-- Prevent theme flash: set the class before first paint -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          var dark = stored ? stored === "dark" : prefersDark;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>
-    
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

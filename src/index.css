@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. Wealthsimple-inspired restraint:
+  warm neutrals, one confident accent, generous contrast.
+  Values are space-separated RGB channels so Tailwind's
+  `rgb(var(--x) / <alpha>)` opacity modifier works.
+*/
+:root {
+  --bg: 247 246 243; /* warm off-white */
+  --surface: 255 255 255;
+  --border: 226 223 216;
+  --fg: 24 24 27; /* near-black */
+  --muted: 106 108 105;
+  --accent: 17 122 101; /* deep teal-green */
+  --accent-fg: 255 255 255;
+
+  --term-bg: 250 249 246;
+}
+
+html.dark {
+  --bg: 11 13 14; /* near-black, faintly cool */
+  --surface: 20 23 26;
+  --border: 34 40 44;
+  --fg: 232 230 225; /* warm off-white */
+  --muted: 138 144 143;
+  --accent: 124 246 198; /* soft mint */
+  --accent-fg: 8 12 11;
+
+  --term-bg: 14 17 19;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: theme("fontFamily.sans");
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Selection uses the accent for a small branded touch */
+::selection {
+  background: rgb(var(--accent) / 0.25);
+}
+
+/* Thin, unobtrusive scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
