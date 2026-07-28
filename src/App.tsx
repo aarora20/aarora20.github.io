@@ -70,8 +70,8 @@ export default function App() {
 
       <main>
         <About />
-        <Projects />
         <Experience />
+        <Projects />
         <Contact />
       </main>
 

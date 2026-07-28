@@ -10,8 +10,8 @@ type Props = {
 
 const links = [
   ["about", "about"],
-  ["projects", "work"],
   ["experience", "experience"],
+  ["projects", "projects"],
   ["contact", "contact"],
 ] as const;
 

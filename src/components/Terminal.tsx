@@ -110,7 +110,7 @@ export function Terminal({ onTheme, onNavigate }: Props) {
         case "ls":
           out(
             <div className="flex flex-wrap gap-x-6 gap-y-1">
-              {["about/", "projects/", "experience/", "contact/"].map((s) => (
+              {["about/", "experience/", "projects/", "contact/"].map((s) => (
                 <span key={s} className="text-accent">
                   {s}
                 </span>

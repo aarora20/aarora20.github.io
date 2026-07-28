@@ -67,7 +67,7 @@ export function About() {
 export function Projects() {
   return (
     <Section id="projects">
-      <SectionLabel>selected work</SectionLabel>
+      <SectionLabel>projects</SectionLabel>
       <div className="grid gap-5 sm:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.06}>
