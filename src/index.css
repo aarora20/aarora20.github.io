@@ -9,15 +9,16 @@
   `rgb(var(--x) / <alpha>)` opacity modifier works.
 */
 :root {
-  --bg: 247 246 243; /* warm off-white */
-  --surface: 255 255 255;
-  --border: 226 223 216;
-  --fg: 24 24 27; /* near-black */
-  --muted: 106 108 105;
-  --accent: 17 122 101; /* deep teal-green */
-  --accent-fg: 255 255 255;
+  /* Amber / sepia "CRT paper" — warm tan with green-phosphor accent */
+  --bg: 231 220 197; /* warm tan */
+  --surface: 238 228 208; /* lighter tan panel */
+  --border: 206 190 160;
+  --fg: 58 47 33; /* dark brown ink */
+  --muted: 120 104 76;
+  --accent: 43 107 74; /* deep phosphor green */
+  --accent-fg: 238 228 208;
 
-  --term-bg: 250 249 246;
+  --term-bg: 234 223 199;
 }
 
 html.dark {
@@ -54,6 +55,23 @@ body {
 /* Selection uses the accent for a small branded touch */
 ::selection {
   background: rgb(var(--accent) / 0.25);
+}
+
+/*
+  Ambient depth so the page never reads as a flat blank sheet:
+  a faint dot-grid across the page, behind content.
+*/
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgb(var(--fg) / 0.05) 1px,
+    transparent 1.2px
+  );
+  background-size: 24px 24px;
 }
 
 /* Thin, unobtrusive scrollbar */
